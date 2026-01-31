@@ -111,50 +111,55 @@ set /p "COMPILE_SDK=Compile SDK [36]: "
 :: AGP Version Selection with Gradle Mapping
 echo.
 echo Available Android Gradle Plugin versions:
-echo   1 - AGP 8.7.3  ^(Gradle 8.9,   Java 17+^) - Stable
-echo   2 - AGP 8.8.2  ^(Gradle 8.10,  Java 17+^) - Stable
-echo   3 - AGP 8.9.0  ^(Gradle 8.11,  Java 17+^) - Stable
-echo   4 - AGP 8.10.0 ^(Gradle 8.11,  Java 21+^) - Stable
-echo   5 - AGP 8.11.0 ^(Gradle 8.11,  Java 21+^) - Stable
-echo   6 - AGP 8.12.0 ^(Gradle 8.12,  Java 21+^) - Stable
-echo   7 - AGP 8.13.2 ^(Gradle 8.13,  Java 21+^) - Latest Stable [default]
-echo   8 - AGP 9.0.0  ^(Gradle 8.14,  Java 21+^) - Beta/Canary
+echo   1 - AGP 8.6.1  ^(Gradle 8.7,   Java 17+^) - Stable
+echo   2 - AGP 8.7.3  ^(Gradle 8.8,   Java 17+^) - Stable
+echo   3 - AGP 8.8.2  ^(Gradle 8.9,   Java 17+^) - Stable
+echo   4 - AGP 8.9.2  ^(Gradle 8.10,  Java 17+^) - Stable
+echo   5 - AGP 8.10.2 ^(Gradle 8.10,  Java 17+^) - Stable
+echo   6 - AGP 8.11.2 ^(Gradle 8.10,  Java 17+^) - Stable
+echo   7 - AGP 8.12.1 ^(Gradle 8.11,  Java 17+^) - Stable
+echo   8 - AGP 8.13.2 ^(Gradle 8.13,  Java 21+^) - Latest Stable [default]
+echo   9 - AGP 9.0.1  ^(Gradle 9.0,   Java 21+^) - Beta/Canary
 echo.
-set "AGP_CHOICE=7"
-set /p "AGP_CHOICE=Select AGP version [1-8, default: 7]: "
+set "AGP_CHOICE=8"
+set /p "AGP_CHOICE=Select AGP version [1-9, default: 8]: "
 
 :: Map AGP choice to versions
 if "%AGP_CHOICE%"=="1" (
-    set "AGP_VERSION=8.7.3"
-    set "GRADLE_VERSION=8.9"
+    set "AGP_VERSION=8.6.1"
+    set "GRADLE_VERSION=8.7"
     set "JAVA_MIN=17"
 ) else if "%AGP_CHOICE%"=="2" (
-    set "AGP_VERSION=8.8.2"
-    set "GRADLE_VERSION=8.10.2"
+    set "AGP_VERSION=8.7.3"
+    set "GRADLE_VERSION=8.8"
     set "JAVA_MIN=17"
 ) else if "%AGP_CHOICE%"=="3" (
-    set "AGP_VERSION=8.9.0"
-    set "GRADLE_VERSION=8.11.1"
+    set "AGP_VERSION=8.8.2"
+    set "GRADLE_VERSION=8.9"
     set "JAVA_MIN=17"
 ) else if "%AGP_CHOICE%"=="4" (
-    set "AGP_VERSION=8.10.0"
-    set "GRADLE_VERSION=8.11.1"
-    set "JAVA_MIN=21"
+    set "AGP_VERSION=8.9.2"
+    set "GRADLE_VERSION=8.10.2"
+    set "JAVA_MIN=17"
 ) else if "%AGP_CHOICE%"=="5" (
-    set "AGP_VERSION=8.11.0"
-    set "GRADLE_VERSION=8.11.1"
-    set "JAVA_MIN=21"
+    set "AGP_VERSION=8.10.2"
+    set "GRADLE_VERSION=8.10.2"
+    set "JAVA_MIN=17"
 ) else if "%AGP_CHOICE%"=="6" (
-    set "AGP_VERSION=8.12.0"
-    set "GRADLE_VERSION=8.12"
-    set "JAVA_MIN=21"
+    set "AGP_VERSION=8.11.2"
+    set "GRADLE_VERSION=8.10.2"
+    set "JAVA_MIN=17"
 ) else if "%AGP_CHOICE%"=="7" (
+    set "AGP_VERSION=8.12.1"
+    set "GRADLE_VERSION=8.11.1"
+    set "JAVA_MIN=17"
+) else if "%AGP_CHOICE%"=="8" (
     set "AGP_VERSION=8.13.2"
     set "GRADLE_VERSION=8.13"
     set "JAVA_MIN=21"
-) else if "%AGP_CHOICE%"=="8" (
-    set "AGP_VERSION=9.0.0"
-    set "GRADLE_VERSION=8.14"
+) else if "%AGP_CHOICE%"=="9" (
+    set "AGP_VERSION=9.0.1"
+    set "GRADLE_VERSION=9.0"
     set "JAVA_MIN=21"
 ) else (
     echo [INFO] Invalid choice, using default AGP 8.13.2

@@ -95,58 +95,64 @@ get_project_config() {
     # AGP Version Selection with Gradle Mapping
     echo ""
     echo -e "${YELLOW}Available Android Gradle Plugin versions:${NC}"
-    echo "  1 - AGP 8.7.3  (Gradle 8.9,   Java 17+) - Stable"
-    echo "  2 - AGP 8.8.2  (Gradle 8.10,  Java 17+) - Stable"
-    echo "  3 - AGP 8.9.0  (Gradle 8.11,  Java 17+) - Stable"
-    echo "  4 - AGP 8.10.0 (Gradle 8.11,  Java 21+) - Stable"
-    echo "  5 - AGP 8.11.0 (Gradle 8.11,  Java 21+) - Stable"
-    echo "  6 - AGP 8.12.0 (Gradle 8.12,  Java 21+) - Stable"
-    echo "  7 - AGP 8.13.2 (Gradle 8.13,  Java 21+) - Latest Stable [default]"
-    echo "  8 - AGP 9.0.0  (Gradle 8.14,  Java 21+) - Beta/Canary"
+    echo "  1 - AGP 8.6.1  (Gradle 8.7,   Java 17+) - Stable"
+    echo "  2 - AGP 8.7.3  (Gradle 8.8,   Java 17+) - Stable"
+    echo "  3 - AGP 8.8.2  (Gradle 8.9,   Java 17+) - Stable"
+    echo "  4 - AGP 8.9.2  (Gradle 8.10,  Java 17+) - Stable"
+    echo "  5 - AGP 8.10.2 (Gradle 8.10,  Java 17+) - Stable"
+    echo "  6 - AGP 8.11.2 (Gradle 8.10,  Java 17+) - Stable"
+    echo "  7 - AGP 8.12.1 (Gradle 8.11,  Java 17+) - Stable"
+    echo "  8 - AGP 8.13.2 (Gradle 8.13,  Java 21+) - Latest Stable [default]"
+    echo "  9 - AGP 9.0.1  (Gradle 9.0,   Java 21+) - Beta/Canary"
     echo ""
-    read -p "Select AGP version [1-8, default: 7]: " AGP_CHOICE
-    AGP_CHOICE=${AGP_CHOICE:-7}
+    read -p "Select AGP version [1-9, default: 8]: " AGP_CHOICE
+    AGP_CHOICE=${AGP_CHOICE:-8}
 
     # Map AGP choice to versions
     case "$AGP_CHOICE" in
         1)
-            AGP_VERSION="8.7.3"
-            GRADLE_VERSION="8.9"
+            AGP_VERSION="8.6.1"
+            GRADLE_VERSION="8.7"
             JAVA_MIN="17"
             ;;
         2)
-            AGP_VERSION="8.8.2"
-            GRADLE_VERSION="8.10.2"
+            AGP_VERSION="8.7.3"
+            GRADLE_VERSION="8.8"
             JAVA_MIN="17"
             ;;
         3)
-            AGP_VERSION="8.9.0"
-            GRADLE_VERSION="8.11.1"
+            AGP_VERSION="8.8.2"
+            GRADLE_VERSION="8.9"
             JAVA_MIN="17"
             ;;
         4)
-            AGP_VERSION="8.10.0"
-            GRADLE_VERSION="8.11.1"
-            JAVA_MIN="21"
+            AGP_VERSION="8.9.2"
+            GRADLE_VERSION="8.10.2"
+            JAVA_MIN="17"
             ;;
         5)
-            AGP_VERSION="8.11.0"
-            GRADLE_VERSION="8.11.1"
-            JAVA_MIN="21"
+            AGP_VERSION="8.10.2"
+            GRADLE_VERSION="8.10.2"
+            JAVA_MIN="17"
             ;;
         6)
-            AGP_VERSION="8.12.0"
-            GRADLE_VERSION="8.12"
-            JAVA_MIN="21"
+            AGP_VERSION="8.11.2"
+            GRADLE_VERSION="8.10.2"
+            JAVA_MIN="17"
             ;;
         7)
+            AGP_VERSION="8.12.1"
+            GRADLE_VERSION="8.11.1"
+            JAVA_MIN="17"
+            ;;
+        8)
             AGP_VERSION="8.13.2"
             GRADLE_VERSION="8.13"
             JAVA_MIN="21"
             ;;
-        8)
-            AGP_VERSION="9.0.0"
-            GRADLE_VERSION="8.14"
+        9)
+            AGP_VERSION="9.0.1"
+            GRADLE_VERSION="9.0"
             JAVA_MIN="21"
             ;;
         *)
